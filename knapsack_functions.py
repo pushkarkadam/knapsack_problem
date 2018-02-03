@@ -21,4 +21,14 @@ def knapsack(product, items, knapsack_capacity, weight, value):
     for stuffs in best_candidate:
         items_in_sack = product[stuffs,0]
         item_list.append(items_in_sack)
-    return print("The best option is {}".format(item_list))
+    
+    list_length = np.arange(0,len(item_list))
+    
+    if len(item_list) < 2:
+        print("The best option is {}".format(item_list[0]))
+    else:
+        print("The best options are:")
+        for x in list_length:
+            print("{},".format(item_list[x]))
+    
+    return format(item_list)

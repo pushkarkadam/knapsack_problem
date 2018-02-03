@@ -13,7 +13,7 @@ import pandas as pd
 from knapsack_functions import knapsack
 
 # Importing the dataset
-dataset = pd.read_csv('knapsack.csv')
+dataset = pd.read_csv('knapsack1.csv')
 
 product = dataset.iloc[:,0:1].values
 value = dataset.iloc[:,1:2].values
