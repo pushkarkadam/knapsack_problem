@@ -11,9 +11,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from knapsack_functions import knapsack
+from time import time
+
+# Function to calculate time of excuting algorithm
+def main_timed(program):
+    start = time()
+    program
+    print("Time taken for execution: {}".format(time() - start))
 
 # Importing the dataset
-dataset = pd.read_csv('knapsack1.csv')
+dataset = pd.read_csv('knapsack.csv')
 
 product = dataset.iloc[:,0:1].values
 value = dataset.iloc[:,1:2].values
@@ -22,4 +29,4 @@ knapsack_capacity = 10
 
 items = len(product)
 
-best_candidate = knapsack(product, items, knapsack_capacity, weight, value)
+main_timed(knapsack(product, items, knapsack_capacity, weight, value))
