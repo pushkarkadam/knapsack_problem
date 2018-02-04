@@ -10,14 +10,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from knapsack_functions import knapsack
-from time import time
+from knapsack_functions import *
 
-# Function to calculate time of excuting algorithm
-def main_timed(program):
-    start = time()
-    program
-    print("Time taken for execution: {}".format(time() - start))
+
 
 # Importing the dataset
 dataset = pd.read_csv('knapsack.csv')
@@ -30,3 +25,10 @@ knapsack_capacity = 10
 items = len(product)
 
 main_timed(knapsack(product, items, knapsack_capacity, weight, value))
+
+
+#Greedy Knapsack response
+data_matrix = dataset.as_matrix()
+sort_by_value = data_matrix[data_matrix[:,1].argsort()]
+
+main_timed(greedy_knapsack(sort_by_value))
